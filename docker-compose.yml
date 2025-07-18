@@ -10,8 +10,7 @@ services:
       - ./:/var/www
     ports:
       - "8000:8000"  # expõe o php artisan serve
-    #command: sh -c "php artisan serve --host=0.0.0.0 --port=8000"
-    command: sh -c "if [ -f artisan ]; then php artisan serve --host=0.0.0.0 --port=8000; else echo 'Laravel não encontrado. Entre no container e rode o composer create-project'; tail -f /dev/null; fi"
+    command: sh -c "if [ -d vendor ]; then php artisan serve --host=0.0.0.0 --port=8000; else echo 'Laravel não encontrado. Entre no container e rode o composer create-project'; tail -f /dev/null; fi"
     depends_on:
       - db
     networks:
