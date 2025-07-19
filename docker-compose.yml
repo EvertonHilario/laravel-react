@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -10,7 +8,7 @@ services:
       - ./:/var/www
     ports:
       - "8000:8000"  # expõe o php artisan serve
-    command: sh -c "if [ -d vendor ]; then php artisan serve --host=0.0.0.0 --port=8000; else echo 'Laravel não encontrado. Entre no container e rode o composer create-project'; tail -f /dev/null; fi"
+    command: sh -c "if [ -d vendor ]; then php artisan serve --host=0.0.0.0 --port=8000; else echo 'Diretório vendor não encontrado. O contêiner está aguardando a instalação das dependências. Execute php setup.php'; tail -f /dev/null; fi"
     depends_on:
       - db
     networks:
@@ -20,10 +18,6 @@ services:
     image: postgres:15-alpine
     container_name: postgres-db
     restart: unless-stopped
-    environment:
-      POSTGRES_DB: laravel
-      POSTGRES_USER: laravel
-      POSTGRES_PASSWORD: secret
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
@@ -33,4 +27,5 @@ services:
 
 networks:
   laravel:
+    name: laravel
     driver: bridge
