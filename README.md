@@ -1,3 +1,68 @@
+## 🧱 Stack Utilizada
+
+Este projeto utiliza uma stack moderna baseada em Laravel e React, orquestrada com Docker:
+
+---
+
+### 🔧 Backend
+
+- **[Laravel 12](https://laravel.com/docs/12.x)**  
+  Framework PHP robusto para desenvolvimento web.
+
+- **[PHP 8.4 (FPM + Alpine)](https://www.php.net/)**  
+  Versão moderna, enxuta e performática do PHP.
+
+- **[Composer](https://getcomposer.org/)**  
+  Gerenciador de dependências do PHP.
+
+- **[Laravel Breeze (React + Inertia)](https://laravel.com/docs/12.x/starter-kits#breeze-and-inertia)**  
+  Kit inicial com autenticação simples, integrado ao React via Inertia.js.
+
+---
+
+### 🎨 Frontend
+
+- **[React 19](https://react.dev/)**  
+  Biblioteca JavaScript moderna e reativa para construção de interfaces.
+
+- **[TypeScript](https://www.typescriptlang.org/)**  
+  Superset do JavaScript com tipagem estática.
+
+- **[Vite](https://vitejs.dev/)**  
+  Empacotador rápido com hot reload para desenvolvimento frontend.
+
+- **[Inertia.js](https://inertiajs.com/)**  
+  Integração sem APIs entre Laravel e React (SPA real, sem renderização no client).
+
+- **[Tailwind CSS](https://tailwindcss.com/)**  
+  Framework utilitário moderno para estilização rápida e responsiva.
+
+- **[shadcn/ui](https://ui.shadcn.dev/)**  
+  Biblioteca de componentes acessíveis e estilizados com Tailwind.
+
+---
+
+### 🐘 Banco de Dados
+
+- **[PostgreSQL 15 (Alpine)](https://hub.docker.com/_/postgres)**  
+  Banco de dados relacional robusto e open-source.
+
+---
+
+### 🐳 Ambiente Docker
+
+- **[Docker](https://www.docker.com/)**  
+  Virtualização de ambientes de forma leve e eficiente.
+
+- **[Docker Compose](https://docs.docker.com/compose/)**  
+  Orquestração dos serviços em contêineres.
+
+- **Volumes e Rede `laravel`**  
+  Persistência de dados e comunicação interna entre os contêineres.
+
+---
+
+
 # Configuração do Projeto Laravel com Docker Compose
 
 Bem-vindo ao guia de configuração manual do seu projeto Laravel com Docker Compose! Este documento irá guiá-lo passo a passo para deixar seu ambiente de desenvolvimento pronto e funcionando.
