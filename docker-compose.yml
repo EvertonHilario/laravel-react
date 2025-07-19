@@ -8,7 +8,7 @@ services:
       - ./:/var/www
     ports:
       - "8000:8000"  # expõe o php artisan serve
-    command: sh -c "if [ -d vendor ]; then php artisan serve --host=0.0.0.0 --port=8000; else echo 'Diretório vendor não encontrado. O contêiner está aguardando a instalação das dependências. Execute php setup.php'; tail -f /dev/null; fi"
+    command: sh -c "if [ -d vendor ]; then php artisan serve --host=0.0.0.0 --port=8000; else echo 'Diretório vendor não encontrado. O contêiner está aguardando a instalação das dependências. Execute os comandos do README.md'; tail -f /dev/null; fi"
     depends_on:
       - db
     networks:
